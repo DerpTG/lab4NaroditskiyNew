@@ -7,12 +7,13 @@ import java.io.PrintWriter;
 
 public class PizzaFlatSend {
 
-    // Method to convert Pizza object data to a delimited string for CSV
+    // Method to convert a Pizza object to a delimited string for CSV writing
     public static String toDelimitedString(Pizza pizza) {
-        return pizza.getSize() + "," +
-                pizza.getSauceType() + "," +
-                pizza.getMainTopping() + "," +
-                pizza.getCrustThickness();
+        return String.format("%s,%s,%s,%s",
+                pizza.getSize(),
+                pizza.getSauceType(),
+                pizza.getMainTopping(),
+                pizza.getCrustThickness());
     }
 
     // Method to write a single Pizza object data as a CSV line in the file

@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c0dc0a0-e3a0-428f-9e21-9d53bf4befa1" name="Changes" comment="test of flat file">
+    <list default="true" id="0c0dc0a0-e3a0-428f-9e21-9d53bf4befa1" name="Changes" comment="now delineates flat file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pizza_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PizzaFlatGet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PizzaFlatGet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PizzaFlatSend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PizzaFlatSend.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +62,7 @@
       <option name="presentableId" value="Default" />
       <updated>1708666828441</updated>
       <workItem from="1708666829493" duration="186000" />
-      <workItem from="1708667089197" duration="3290000" />
+      <workItem from="1708667089197" duration="4171000" />
     </task>
     <task id="LOCAL-00001" summary="Moved over from old lab4">
       <option name="closed" value="true" />
@@ -91,7 +88,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708669017530</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="now delineates flat file">
+      <option name="closed" value="true" />
+      <created>1708670745259</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1708670745259</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,6 +105,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Moved over from old lab4" />
     <MESSAGE value="test of flat file" />
-    <option name="LAST_COMMIT_MESSAGE" value="test of flat file" />
+    <MESSAGE value="now delineates flat file" />
+    <option name="LAST_COMMIT_MESSAGE" value="now delineates flat file" />
   </component>
 </project>
