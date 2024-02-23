@@ -50,8 +50,8 @@ public class Main {
                     if (flatFileChoice == 1) {
                         PizzaFlatSend.sendPizzaData(json,"pizza_data.csv");
                     } else if (flatFileChoice == 2) {
-                        List<String> pizzasJson = PizzaFlatGet.getPizzaData("pizza_data.csv");
-                        PizzaFlatGet.printPizzaData(pizzasJson);
+                        List<Pizza> pizzas = PizzaFlatGet.getPizzaData("pizza_data.csv");
+                        PizzaFlatGet.printPizzaData(pizzas);
                     } else if (flatFileChoice == 3) {
                         break; // Exit the while loop for handling Flat File Data
                     } else {
