@@ -11,8 +11,8 @@ public class PizzaFlatGet {
     // Method to convert a CSV line into a Pizza object
     public static Pizza fromDelimitedString(String line) {
         String[] parts = line.split(",");
-        if (parts.length == 4) {
-            return new Pizza(parts[0], parts[1], parts[2], parts[3]);
+        if (parts.length == 6) {
+            return new Pizza(parts[0], parts[1], parts[2], parts[3], parts[4], parts[5]);
         } else {
             throw new IllegalArgumentException("Invalid CSV format: " + line);
         }
@@ -34,7 +34,7 @@ public class PizzaFlatGet {
 
     public static void printPizzaData(List<Pizza> pizzas) {
         for (Pizza pizza : pizzas) {
-            System.out.println("Size: " + pizza.getSize() + ", SauceType: " + pizza.getSauceType() +
+            System.out.println("PizzaID: " + pizza.getPizzaID() +", Price: " + pizza.getPrice() +", Size: " + pizza.getSize() + ", SauceType: " + pizza.getSauceType() +
                     ", MainTopping: " + pizza.getMainTopping() + ", CrustThickness: " + pizza.getCrustThickness());
         }
     }

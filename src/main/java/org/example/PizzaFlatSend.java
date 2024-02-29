@@ -9,7 +9,9 @@ public class PizzaFlatSend {
 
     // Method to convert a Pizza object to a delimited string for CSV writing
     public static String toDelimitedString(Pizza pizza) {
-        return String.format("%s,%s,%s,%s",
+        return String.format("%s,%s,%s,%s,%s,%s",
+                pizza.getPizzaID(),
+                pizza.getPrice(),
                 pizza.getSize(),
                 pizza.getSauceType(),
                 pizza.getMainTopping(),

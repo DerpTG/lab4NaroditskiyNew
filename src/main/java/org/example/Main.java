@@ -11,6 +11,10 @@ public class Main {
 
         // Pizza Creation
         System.out.println("Pizza Creation:");
+        System.out.println("Enter Pizza ID of the pizza:");
+        String id = scanner.nextLine();
+        System.out.println("Enter price of the pizza:");
+        String price = scanner.nextLine();
         System.out.println("Enter size of the pizza:");
         String size = scanner.nextLine();
         System.out.println("Enter sauce type:");
@@ -19,7 +23,7 @@ public class Main {
         String mainTopping = scanner.nextLine();
         System.out.println("Enter crust thickness:");
         String crustThickness = scanner.nextLine();
-        Pizza pizza = new Pizza(size, sauceType, mainTopping, crustThickness);
+        Pizza pizza = new Pizza(id, price, size, sauceType, mainTopping, crustThickness);
 
         // Serialize Pizza object to JSON using Gson
         Gson gson = new Gson();
