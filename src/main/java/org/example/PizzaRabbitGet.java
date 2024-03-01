@@ -10,24 +10,36 @@ public class PizzaRabbitGet {
 
     private final static String QUEUE_NAME = "pizzaQueue";
     private final Gson gson = new Gson(); // Gson instance for JSON parsing
+    private Connection connection; // Class-level field for Connection
+    private Channel channel; // Class-level field for Channel
 
     public void startReceiving() throws Exception {
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost("localhost"); // Host is set to localhost
-        try (Connection connection = factory.newConnection();
-             Channel channel = connection.createChannel()) {
+        // Open the connection and create a channel
+        connection = factory.newConnection();
+        channel = connection.createChannel();
 
-            channel.queueDeclare(QUEUE_NAME, false, false, false, null);
-            System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
+        channel.queueDeclare(QUEUE_NAME, false, false, false, null);
+        System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
 
-            DeliverCallback deliverCallback = (consumerTag, delivery) -> {
-                String message = new String(delivery.getBody(), "UTF-8");
-                // Deserialize the JSON string to a Pizza object
-                Pizza pizza = gson.fromJson(message, Pizza.class);
-                // Use the displayPizzaDetails method to print pizza details
-                pizza.displayPizzaDetails();
-            };
-            channel.basicConsume(QUEUE_NAME, true, deliverCallback, consumerTag -> {});
+        DeliverCallback deliverCallback = (consumerTag, delivery) -> {
+            String message = new String(delivery.getBody(), "UTF-8");
+            // Deserialize the JSON string to a Pizza object
+            Pizza pizza = gson.fromJson(message, Pizza.class);
+            // Use the displayPizzaDetails method to print pizza details
+            pizza.displayPizzaDetails();
+        };
+        channel.basicConsume(QUEUE_NAME, true, deliverCallback, consumerTag -> { });
+    }
+
+    // Call this method to close the channel and connection when done
+    public void stopReceiving() throws Exception {
+        if (channel != null && channel.isOpen()) {
+            channel.close();
+        }
+        if (connection != null && connection.isOpen()) {
+            connection.close();
         }
     }
 }

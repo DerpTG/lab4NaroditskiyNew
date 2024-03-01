@@ -64,9 +64,18 @@ public class Main {
 
                 }
             } else if (appChoice == 2) {
-                // Execute RabbitMQ message data application
-                System.out.println("Executing RabbitMQ Message Data Application...");
+                /// Start receiving messages from RabbitMQ
+                PizzaRabbitGet receiver = new PizzaRabbitGet();
+                System.out.println("Starting RabbitMQ receiver...");
+                try {
+                    receiver.startReceiving(); // This method should be ready to handle receiving messages
+                } catch (Exception e) {
+                    System.err.println("Failed to receive messages from RabbitMQ: " + e.getMessage());
+                    e.printStackTrace();
+                }
+
                 // Send pizza JSON to RabbitMQ
+                System.out.println("Sending Pizza JSON to RabbitMQ...");
                 PizzaRabbitSend sender = new PizzaRabbitSend(json);
                 try {
                     sender.sendToQueue(); // Assuming this method sends the pizza JSON to RabbitMQ
@@ -76,12 +85,15 @@ public class Main {
                     e.printStackTrace();
                 }
 
-                // Receive and print pizza JSON from RabbitMQ
-                PizzaRabbitGet receiver = new PizzaRabbitGet();
+                // Wait for user input to proceed, ensuring that messages can be consumed
+                System.out.println("RabbitMQ operations completed. Press any key to continue...");
+                scanner.nextLine(); // Pause to allow message consumption before proceeding, adjust as necessary
+
+                // Close the receiver to clean up resources
                 try {
-                    receiver.startReceiving();
+                    receiver.stopReceiving();
                 } catch (Exception e) {
-                    System.err.println("Failed to receive messages from RabbitMQ: " + e.getMessage());
+                    System.err.println("Failed to stop the RabbitMQ receiver: " + e.getMessage());
                     e.printStackTrace();
                 }
 
