@@ -67,8 +67,28 @@ public class Main {
                 // Execute RabbitMQ message data application
                 System.out.println("Executing RabbitMQ Message Data Application...");
             } else if (appChoice == 3) {
-                // Execute web service
-                System.out.println("Executing JSON Data Payload to Web Service Application...");
+                // Start the Web Service to serve Pizza JSON
+                PizzaWebSend pizzaWebSend = new PizzaWebSend(json); // Initialize with Pizza JSON
+                try {
+                    pizzaWebSend.startServer();
+                    System.out.println("Web service started successfully.");
+
+                    // Allow user to choose the endpoint to interact with
+                    System.out.println("Select the endpoint to send a request:");
+                    System.out.println("1. /pizza");
+                    System.out.println("2. /csv");
+                    int endpointChoice = scanner.nextInt();
+                    scanner.nextLine(); // Consume newline
+
+                    // Determine the endpoint based on user choice using if-else
+                    String endpoint = (endpointChoice == 1) ? "pizza" : "csv";
+                    PizzaWebGet webGet = new PizzaWebGet(endpoint);
+                    webGet.callWebService();
+
+                } catch (IOException e) {
+                    System.out.println("Failed to start the web service.");
+                    e.printStackTrace();
+                }
             } else if (appChoice == 4) {
                 System.out.println("Exiting...");
                 break;
