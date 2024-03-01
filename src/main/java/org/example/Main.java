@@ -77,9 +77,9 @@ public class Main {
                 }
 
                 // Receive and print pizza JSON from RabbitMQ
-                PizzaRabbitGet receiver = new PizzaRabbitGet(); // Again, assuming no args needed
+                PizzaRabbitGet receiver = new PizzaRabbitGet();
                 try {
-                    receiver.startReceiving(); // This might be a blocking call; consider running it in a separate thread if necessary
+                    receiver.startReceiving();
                 } catch (Exception e) {
                     System.err.println("Failed to receive messages from RabbitMQ: " + e.getMessage());
                     e.printStackTrace();
