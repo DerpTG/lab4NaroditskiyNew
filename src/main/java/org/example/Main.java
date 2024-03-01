@@ -36,7 +36,7 @@ public class Main {
             System.out.println("\nChoose Application Type:");
             System.out.println("1. Flat File Data");
             System.out.println("2. RabbitMQ Message Data");
-            System.out.println("3. JSON Data Payload to Web Service");
+            System.out.println("3. Web Service");
             System.out.println("4. Exit");
             int appChoice = scanner.nextInt();
             scanner.nextLine(); // Consume newline
@@ -67,24 +67,39 @@ public class Main {
                 // Execute RabbitMQ message data application
                 System.out.println("Executing RabbitMQ Message Data Application...");
             } else if (appChoice == 3) {
-                // Start the Web Service to serve Pizza JSON
+                // Start the Web Service to serve Pizza JSON only once
                 PizzaWebSend pizzaWebSend = new PizzaWebSend(json); // Initialize with Pizza JSON
                 try {
                     pizzaWebSend.startServer();
                     System.out.println("Web service started successfully.");
 
-                    // Allow user to choose the endpoint to interact with
-                    System.out.println("Select the endpoint to send a request:");
-                    System.out.println("1. /pizza");
-                    System.out.println("2. /csv");
-                    int endpointChoice = scanner.nextInt();
-                    scanner.nextLine(); // Consume newline
+                    while (true) {
+                        // Allow user to choose the endpoint to interact with or go back
+                        System.out.println("\nSelect the endpoint to send a request:");
+                        System.out.println("1. /pizza");
+                        System.out.println("2. /csv");
+                        System.out.println("3. Go back");
+                        int endpointChoice = scanner.nextInt();
+                        scanner.nextLine(); // Consume newline
 
-                    // Determine the endpoint based on user choice using if-else
-                    String endpoint = (endpointChoice == 1) ? "pizza" : "csv";
-                    PizzaWebGet webGet = new PizzaWebGet(endpoint);
-                    webGet.callWebService();
-
+                        switch (endpointChoice) {
+                            case 1:
+                                // Interact with the /pizza endpoint
+                                new PizzaWebGet("pizza").callWebService();
+                                break;
+                            case 2:
+                                // Interact with the /csv endpoint
+                                new PizzaWebGet("csv").callWebService();
+                                break;
+                            case 3:
+                                // Exit the loop and go back to the main menu
+                                break;
+                            default:
+                                System.out.println("Invalid choice. Please select a valid option.");
+                                break;
+                        }
+                        if (endpointChoice == 3){break;}
+                    }
                 } catch (IOException e) {
                     System.out.println("Failed to start the web service.");
                     e.printStackTrace();
