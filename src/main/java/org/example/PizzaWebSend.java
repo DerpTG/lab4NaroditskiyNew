@@ -12,18 +12,26 @@ import java.nio.file.Files;
 
 public class PizzaWebSend {
     private final String pizzaJson;
+    private HttpServer server;
 
     public PizzaWebSend(String pizzaJson) {
         this.pizzaJson = pizzaJson;
     }
 
     public void startServer() throws IOException {
-        HttpServer server = HttpServer.create(new InetSocketAddress(8000), 0);
+        server = HttpServer.create(new InetSocketAddress(8000), 0);
         server.createContext("/csv", new CSVHandler()); // Handler for CSV
         server.createContext("/pizza", new PizzaHandler()); // Handler for Pizza JSON
         server.setExecutor(null); // creates a default executor
         server.start();
         System.out.println("Server started on port 8000");
+    }
+
+    public void stopServer() {
+        if (server != null) {
+            server.stop(0); // Stop immediately
+            System.out.println("Server stopped.");
+        }
     }
 
     class CSVHandler implements HttpHandler {

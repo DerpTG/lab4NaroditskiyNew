@@ -98,7 +98,10 @@ public class Main {
                                 System.out.println("Invalid choice. Please select a valid option.");
                                 break;
                         }
-                        if (endpointChoice == 3){break;}
+                        if (endpointChoice == 3) {
+                            pizzaWebSend.stopServer(); // Ensure the server is stopped when exiting
+                            break;
+                        }
                     }
                 } catch (IOException e) {
                     System.out.println("Failed to start the web service.");
