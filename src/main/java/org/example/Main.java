@@ -66,6 +66,25 @@ public class Main {
             } else if (appChoice == 2) {
                 // Execute RabbitMQ message data application
                 System.out.println("Executing RabbitMQ Message Data Application...");
+                // Send pizza JSON to RabbitMQ
+                PizzaRabbitSend sender = new PizzaRabbitSend(json);
+                try {
+                    sender.sendToQueue(); // Assuming this method sends the pizza JSON to RabbitMQ
+                    System.out.println("Pizza JSON sent to RabbitMQ successfully.");
+                } catch (Exception e) {
+                    System.err.println("Failed to send Pizza JSON to RabbitMQ: " + e.getMessage());
+                    e.printStackTrace();
+                }
+
+                // Receive and print pizza JSON from RabbitMQ
+                PizzaRabbitGet receiver = new PizzaRabbitGet(); // Again, assuming no args needed
+                try {
+                    receiver.startReceiving(); // This might be a blocking call; consider running it in a separate thread if necessary
+                } catch (Exception e) {
+                    System.err.println("Failed to receive messages from RabbitMQ: " + e.getMessage());
+                    e.printStackTrace();
+                }
+
             } else if (appChoice == 3) {
                 // Start the Web Service to serve Pizza JSON only once
                 PizzaWebSend pizzaWebSend = new PizzaWebSend(json); // Initialize with Pizza JSON
