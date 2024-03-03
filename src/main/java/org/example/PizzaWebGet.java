@@ -1,7 +1,6 @@
 package org.example;
 
 import com.google.gson.Gson;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -10,7 +9,7 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
 public class PizzaWebGet {
-    private final String endpoint;
+    private String endpoint;
     private final Gson gson = new Gson();
 
     public PizzaWebGet(String endpoint) {
@@ -19,7 +18,7 @@ public class PizzaWebGet {
 
     public void callWebService() {
         try {
-            URL obj = new URL("http://localhost:8000/" + this.endpoint);
+            URL obj = new URL("http://localhost:8000/" + endpoint);
             HttpURLConnection con = (HttpURLConnection) obj.openConnection();
             con.setRequestMethod("GET");
 
@@ -35,13 +34,10 @@ public class PizzaWebGet {
             }
             in.close();
 
-            // Determine the type of response based on the endpoint
-            if (this.endpoint.equals("pizza")) {
-                // Parse JSON response
+            if (endpoint.equals("pizza")) {
                 Pizza pizza = gson.fromJson(response.toString(), Pizza.class);
                 pizza.displayPizzaDetails();
-            } else if (this.endpoint.equals("csv")) {
-                // Parse CSV response (assuming a simple CSV format)
+            } else if (endpoint.equals("csv")) {
                 String[] lines = response.toString().split("\n");
                 for (String line : lines) {
                     String[] values = line.split(",");
@@ -52,10 +48,15 @@ public class PizzaWebGet {
                     }
                 }
             }
-
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
+    // Getter for endpoint
+    public String getEndpoint() {return endpoint;}
+
+    // Setter for endpoint
+    public void setEndpoint(String endpoint) {this.endpoint = endpoint;}
 }
 

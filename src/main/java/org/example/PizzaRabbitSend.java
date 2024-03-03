@@ -24,4 +24,10 @@ public class PizzaRabbitSend {
             System.out.println(" [x] Sent Pizza JSON: '" + pizzaJson + "'");
         }
     }
+
+    // Getter for pizzaJson
+    public String getPizzaJson() {return pizzaJson;}
+
+    // Setter for pizzaJson
+    public void setPizzaJson(String pizzaJson) {this.pizzaJson = pizzaJson;}
 }

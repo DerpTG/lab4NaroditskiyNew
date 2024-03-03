@@ -9,13 +9,13 @@ import com.rabbitmq.client.DeliverCallback;
 public class PizzaRabbitGet {
 
     private final static String QUEUE_NAME = "pizzaQueue";
-    private final Gson gson = new Gson(); // Gson instance for JSON parsing
-    private Connection connection; // Class-level field for Connection
-    private Channel channel; // Class-level field for Channel
+    private final Gson gson = new Gson();
+    private Connection connection;
+    private Channel channel;
 
     public void startReceiving() throws Exception {
         ConnectionFactory factory = new ConnectionFactory();
-        factory.setHost("localhost"); // Host is set to localhost
+        factory.setHost("localhost");
         // Open the connection and create a channel
         connection = factory.newConnection();
         channel = connection.createChannel();

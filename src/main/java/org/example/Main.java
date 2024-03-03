@@ -68,7 +68,7 @@ public class Main {
                 PizzaRabbitGet receiver = new PizzaRabbitGet();
                 System.out.println("Starting RabbitMQ receiver...");
                 try {
-                    receiver.startReceiving(); // This method should be ready to handle receiving messages
+                    receiver.startReceiving();
                 } catch (Exception e) {
                     System.err.println("Failed to receive messages from RabbitMQ: " + e.getMessage());
                     e.printStackTrace();
@@ -78,7 +78,7 @@ public class Main {
                 System.out.println("Sending Pizza JSON to RabbitMQ...");
                 PizzaRabbitSend sender = new PizzaRabbitSend(json);
                 try {
-                    sender.sendToQueue(); // Assuming this method sends the pizza JSON to RabbitMQ
+                    sender.sendToQueue();
                     System.out.println("Pizza JSON sent to RabbitMQ successfully.");
                 } catch (Exception e) {
                     System.err.println("Failed to send Pizza JSON to RabbitMQ: " + e.getMessage());
@@ -87,7 +87,7 @@ public class Main {
 
                 // Wait for user input to proceed, ensuring that messages can be consumed
                 System.out.println("RabbitMQ operations completed. Press any key to continue...");
-                scanner.nextLine(); // Pause to allow message consumption before proceeding, adjust as necessary
+                scanner.nextLine();
 
                 // Close the receiver to clean up resources
                 try {
@@ -99,7 +99,7 @@ public class Main {
 
             } else if (appChoice == 3) {
                 // Start the Web Service to serve Pizza JSON only once
-                PizzaWebSend pizzaWebSend = new PizzaWebSend(json); // Initialize with Pizza JSON
+                PizzaWebSend pizzaWebSend = new PizzaWebSend(json);
                 try {
                     pizzaWebSend.startServer();
                     System.out.println("Web service started successfully.");
@@ -111,26 +111,23 @@ public class Main {
                         System.out.println("2. /csv");
                         System.out.println("3. Go back");
                         int endpointChoice = scanner.nextInt();
-                        scanner.nextLine(); // Consume newline
+                        scanner.nextLine();
 
                         switch (endpointChoice) {
                             case 1:
-                                // Interact with the /pizza endpoint
                                 new PizzaWebGet("pizza").callWebService();
                                 break;
                             case 2:
-                                // Interact with the /csv endpoint
                                 new PizzaWebGet("csv").callWebService();
                                 break;
                             case 3:
-                                // Exit the loop and go back to the main menu
                                 break;
                             default:
                                 System.out.println("Invalid choice. Please select a valid option.");
                                 break;
                         }
                         if (endpointChoice == 3) {
-                            pizzaWebSend.stopServer(); // Ensure the server is stopped when exiting
+                            pizzaWebSend.stopServer();
                             break;
                         }
                     }

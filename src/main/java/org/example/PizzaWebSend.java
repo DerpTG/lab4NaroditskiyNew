@@ -1,6 +1,5 @@
 package org.example;
 
-import com.google.gson.Gson;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
@@ -11,7 +10,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 
 public class PizzaWebSend {
-    private final String pizzaJson;
+    private String pizzaJson;
     private HttpServer server;
 
     public PizzaWebSend(String pizzaJson) {
@@ -29,16 +28,16 @@ public class PizzaWebSend {
 
     public void stopServer() {
         if (server != null) {
-            server.stop(0); // Stop immediately
+            server.stop(0);
             System.out.println("Server stopped.");
         }
     }
 
+    // Handler for serving the Pizza csv
     class CSVHandler implements HttpHandler {
         @Override
         public void handle(HttpExchange exchange) throws IOException {
-            // Assuming the CSV file is in the same directory as your source files
-            String csvFilePath = "pizza_data.csv"; // Assuming it's in the same directory
+            String csvFilePath = "pizza_data.csv";
             File file = new File(csvFilePath);
             if (file.exists()) {
                 exchange.sendResponseHeaders(200, file.length());
@@ -65,4 +64,10 @@ public class PizzaWebSend {
             }
         }
     }
+
+    // Getter for pizzaJson
+    public String getPizzaJson() {return pizzaJson;}
+
+    // Setter for pizzaJson
+    public void setPizzaJson(String pizzaJson) {this.pizzaJson = pizzaJson;}
 }

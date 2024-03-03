@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c0dc0a0-e3a0-428f-9e21-9d53bf4befa1" name="Changes" comment="rabbit">
+    <list default="true" id="0c0dc0a0-e3a0-428f-9e21-9d53bf4befa1" name="Changes" comment="fully working and completed code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PizzaFlatSend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PizzaFlatSend.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PizzaRabbitGet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PizzaRabbitGet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PizzaRabbitSend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PizzaRabbitSend.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PizzaWebGet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PizzaWebGet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PizzaWebSend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PizzaWebSend.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +69,8 @@
       <updated>1708666828441</updated>
       <workItem from="1708666829493" duration="186000" />
       <workItem from="1708667089197" duration="6541000" />
-      <workItem from="1709242720592" duration="18825000" />
+      <workItem from="1709242720592" duration="20621000" />
+      <workItem from="1709442106597" duration="841000" />
     </task>
     <task id="LOCAL-00001" summary="Moved over from old lab4">
       <option name="closed" value="true" />
@@ -179,7 +184,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709265894363</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="fully working and completed code">
+      <option name="closed" value="true" />
+      <created>1709269559006</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1709269559006</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,6 +208,7 @@
     <MESSAGE value="web service bugs fixes" />
     <MESSAGE value="web service addition of stop, to stop the server" />
     <MESSAGE value="rabbit" />
-    <option name="LAST_COMMIT_MESSAGE" value="rabbit" />
+    <MESSAGE value="fully working and completed code" />
+    <option name="LAST_COMMIT_MESSAGE" value="fully working and completed code" />
   </component>
 </project>
