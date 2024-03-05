@@ -1,3 +1,13 @@
+/** Project: Lab 4 Systems Integration Pizza Shop
+ * Purpose Details: System Integration Using Flat Files, RabbitMQ, and Web Service/JSON
+ * Course: IST 242
+ * Author: Felix Naroditskiy
+ * Date Developed: 2/21/2024
+ * Last Date Changed: 3/4/2024
+ * Rev: 1.0
+
+ */
+
 package org.example;
 
 import com.google.gson.Gson;
@@ -8,14 +18,29 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
+
 public class PizzaWebGet {
+    /**
+     * @param endpoint The endpoint URL to which the HTTP GET request is sent.
+     * @param gson Gson instance for converting JSON strings into Pizza objects.
+     */
     private String endpoint;
     private final Gson gson = new Gson();
 
+    /**
+     * Constructs a new PizzaWebGet instance with the specified endpoint.
+     *
+     * @param endpoint The endpoint URL segment for the web service call.
+     */
     public PizzaWebGet(String endpoint) {
         this.endpoint = endpoint;
     }
 
+    /**
+     * Sends an HTTP GET request to the specified endpoint, parses the response,
+     * and displays the details of the Pizza object(s) created from the response data.
+     * The method handles both JSON and CSV response formats, depending on the endpoint.
+     */
     public void callWebService() {
         try {
             URL obj = new URL("http://localhost:8000/" + endpoint);
@@ -53,10 +78,18 @@ public class PizzaWebGet {
         }
     }
 
-    // Getter for endpoint
+    /**
+     * Returns the current endpoint URL segment.
+     *
+     * @return The current endpoint URL segment.
+     */
     public String getEndpoint() {return endpoint;}
 
-    // Setter for endpoint
+    /**
+     * Updates the endpoint URL segment for the web service call.
+     *
+     * @param endpoint The new endpoint URL segment.
+     */
     public void setEndpoint(String endpoint) {this.endpoint = endpoint;}
 }
 

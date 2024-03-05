@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c0dc0a0-e3a0-428f-9e21-9d53bf4befa1" name="Changes" comment="fully working and completed code">
+    <list default="true" id="0c0dc0a0-e3a0-428f-9e21-9d53bf4befa1" name="Changes" comment="remaining getters and setters added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Pizza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Pizza.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PizzaFlatGet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PizzaFlatGet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PizzaFlatSend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PizzaFlatSend.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PizzaRabbitGet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PizzaRabbitGet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PizzaRabbitSend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PizzaRabbitSend.java" afterDir="false" />
@@ -70,7 +72,8 @@
       <workItem from="1708666829493" duration="186000" />
       <workItem from="1708667089197" duration="6541000" />
       <workItem from="1709242720592" duration="20621000" />
-      <workItem from="1709442106597" duration="841000" />
+      <workItem from="1709442106597" duration="1760000" />
+      <workItem from="1709603837633" duration="4895000" />
     </task>
     <task id="LOCAL-00001" summary="Moved over from old lab4">
       <option name="closed" value="true" />
@@ -192,7 +195,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709269559006</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="remaining getters and setters added">
+      <option name="closed" value="true" />
+      <created>1709443142112</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1709443142112</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,6 +220,7 @@
     <MESSAGE value="web service addition of stop, to stop the server" />
     <MESSAGE value="rabbit" />
     <MESSAGE value="fully working and completed code" />
-    <option name="LAST_COMMIT_MESSAGE" value="fully working and completed code" />
+    <MESSAGE value="remaining getters and setters added" />
+    <option name="LAST_COMMIT_MESSAGE" value="remaining getters and setters added" />
   </component>
 </project>
