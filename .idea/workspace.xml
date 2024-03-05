@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c0dc0a0-e3a0-428f-9e21-9d53bf4befa1" name="Changes" comment="comments added to code">
+    <list default="true" id="0c0dc0a0-e3a0-428f-9e21-9d53bf4befa1" name="Changes" comment="Captures">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pizza_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/pizza_data.csv" afterDir="false" />
     </list>
@@ -66,7 +66,7 @@
       <workItem from="1708667089197" duration="6541000" />
       <workItem from="1709242720592" duration="20621000" />
       <workItem from="1709442106597" duration="1760000" />
-      <workItem from="1709603837633" duration="8783000" />
+      <workItem from="1709603837633" duration="9884000" />
     </task>
     <task id="LOCAL-00001" summary="Moved over from old lab4">
       <option name="closed" value="true" />
@@ -204,7 +204,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709608988562</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Captures">
+      <option name="closed" value="true" />
+      <created>1709659535642</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1709659535642</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,6 +231,7 @@
     <MESSAGE value="fully working and completed code" />
     <MESSAGE value="remaining getters and setters added" />
     <MESSAGE value="comments added to code" />
-    <option name="LAST_COMMIT_MESSAGE" value="comments added to code" />
+    <MESSAGE value="Captures" />
+    <option name="LAST_COMMIT_MESSAGE" value="Captures" />
   </component>
 </project>
